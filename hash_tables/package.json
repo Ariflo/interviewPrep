@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "practice tests",
   "main": "hashTable.js",
-  "dependencies": {},
+  "dependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0",
+    "supertest-session": "^2.0.1"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "mocha"
