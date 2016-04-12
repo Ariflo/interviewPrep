@@ -2,5 +2,10 @@
 //What if you cannot use additional data structures
 
 function isUnique (str){
-	
+	return true;
 }
+
+
+module.exports = {
+	isUnique:isUnique
+};
