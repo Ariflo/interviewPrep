@@ -52,42 +52,46 @@ function isRotated (s1, s2) {
 //A palindrome is a word or phrase  that is the same forwards and backwards. A permutation 
 //is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words. 
 //word: Tact Coa return: true
-// function isPalindrome(str) {
+function isPalindrome(str) {
+	//run a loop for how many possible permutations there are 
+	var perms = _factorial(str.length);
 
-//  	//str length factorial, number or various permutations
-//  	for(var i = 0; i < str.length; i++){
-//  		var randoIndex = Math.floor(Math.Random() * str.length); 
-//  		str[]
+ 	for(var i = 0; i <= perms; i++){
+ 		var randoIndex = Math.floor(Math.random() * str.length - 1); 
+ 		//new string with new index
+ 		var tmp = str[i];
+ 		str[i] = str[randoIndex];
+ 		str[randoIndex] = tmp;
+ 		
+ 		if(str ===_reverseString(str)){
+ 			return true;
+ 		}
+ 	}
+ 	return false;
 
-//  		if(newStr === )
-//  	}
+ 	function _reverseString (str){
+ 		var revStr = ''
 
-//  	function _reverseString (str){
-//  		var revStr = ''
+ 		for(var i = str.length - 1; i >= 0; i--){
+ 			revStr += str[i]; 
+ 		}
 
-//  		for(var i = str.length; i < 0; i--){
-//  			revStr += str[i]; 
-//  		}
-//  		return revStr; 	
-//  	}
-// }
+ 		return revStr; 	
+ 	}
 
-function _reverseString (str){
-	var revStr = '';
-
-	for(var i = str.length - 1; i <= 0; i--){
-		revStr += str[i]; 
-	}
-	return revStr; 
+ 	function _factorial(num){
+ 		if(num === 0) {
+ 		     return 1
+ 		}else {
+ 		     return num * _factorial(num - 1);
+ 		}
+ 	}
 }
 
 
-
-console.log(_reverseString("google"));
-
-// module.exports = {
-// 	isUnique:isUnique,
-// 	isRotated:isRotated,
-// 	isPalindrome: isPalindrome
-// };
+module.exports = {
+	isUnique:isUnique,
+	isRotated:isRotated,
+	isPalindrome: isPalindrome
+};
 
