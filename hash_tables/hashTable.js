@@ -48,10 +48,46 @@ function isRotated (s1, s2) {
 }
 
 
+//Palindrome Permutation: Given a string, write a function to check if it is a permutation of a palindrome.
+//A palindrome is a word or phrase  that is the same forwards and backwards. A permutation 
+//is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words. 
+//word: Tact Coa return: true
+// function isPalindrome(str) {
+
+//  	//str length factorial, number or various permutations
+//  	for(var i = 0; i < str.length; i++){
+//  		var randoIndex = Math.floor(Math.Random() * str.length); 
+//  		str[]
+
+//  		if(newStr === )
+//  	}
+
+//  	function _reverseString (str){
+//  		var revStr = ''
+
+//  		for(var i = str.length; i < 0; i--){
+//  			revStr += str[i]; 
+//  		}
+//  		return revStr; 	
+//  	}
+// }
+
+function _reverseString (str){
+	var revStr = '';
+
+	for(var i = str.length - 1; i <= 0; i--){
+		revStr += str[i]; 
+	}
+	return revStr; 
+}
 
 
-module.exports = {
-	isUnique:isUnique,
-	isRotated:isRotated
-};
+
+console.log(_reverseString("google"));
+
+// module.exports = {
+// 	isUnique:isUnique,
+// 	isRotated:isRotated,
+// 	isPalindrome: isPalindrome
+// };
 
