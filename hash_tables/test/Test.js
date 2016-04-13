@@ -44,22 +44,14 @@ describe('hash tables', function(){
     })        
 
     it("isPalindrome should return true if the string is the same forwards and backwards", function(done){
-    	expect(hashTables.isPalindrome("Tact Coa")).to.equal(true);
-    	// expect(hashTables.isPalindrome("mom")).to.equal(true);
-    	// expect(hashTables.isPalindrome("pop")).to.equal(true);
-    	// expect(hashTables.isPalindrome("%2%")).to.equal(true);
-    	// expect(hashTables.isPalindrome("^^^%%%^^^")).to.equal(true);
-    	// expect(hashTables.isPalindrome("666")).to.equal(true);
-    	// expect(hashTables.isPalindrome("abba")).to.equal(true);
+    	expect(hashTables.isPermutationOfPalindrome("Tact Coa")).to.equal(true);
     	done();
     })        
 
     it("isPalindrome should return false if the string is NOT the same forwards and backwards", function(done){
-    	expect(hashTables.isPalindrome("star whores")).to.equal(false);
-    	expect(hashTables.isPalindrome("ren and stimpy")).to.equal(false);
-    	expect(hashTables.isPalindrome("genius")).to.equal(false);
-    	//expect(hashTables.isPalindrome("(88989 ()(((")).to.equal(false);
-    	//expect(hashTables.isPalindrome("%^^&&&***")).to.equal(false);
+    	expect(hashTables.isPermutationOfPalindrome("star whores")).to.equal(false);
+    	expect(hashTables.isPermutationOfPalindrome("ren and stimpy")).to.equal(false);
+    	expect(hashTables.isPermutationOfPalindrome("genius")).to.equal(false);
     	done();
     })    
 

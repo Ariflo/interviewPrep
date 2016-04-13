@@ -52,46 +52,36 @@ function isRotated (s1, s2) {
 //A palindrome is a word or phrase  that is the same forwards and backwards. A permutation 
 //is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words. 
 //word: Tact Coa return: true
-function isPalindrome(str) {
-	//run a loop for how many possible permutations there are 
-	var perms = _factorial(str.length);
+function isPermutationOfPalindrome(str) {
+	var lowStr = str.toLowerCase().replace(/ /g,'');
+	var dict = {};
 
- 	for(var i = 0; i <= perms; i++){
- 		var randoIndex = Math.floor(Math.random() * str.length - 1); 
- 		//new string with new index
- 		var tmp = str[i];
- 		str[i] = str[randoIndex];
- 		str[randoIndex] = tmp;
- 		
- 		if(str ===_reverseString(str)){
- 			return true;
- 		}
- 	}
- 	return false;
+	for(var i = 0; i < lowStr.length; i++){
+		if(!dict[lowStr[i]]){
+			dict[lowStr[i]] = 1; 
 
- 	function _reverseString (str){
- 		var revStr = ''
+		}else{
+			dict[lowStr[i]] += 1;
+		}
+	}
 
- 		for(var i = str.length - 1; i >= 0; i--){
- 			revStr += str[i]; 
- 		}
+	var oddCount = 0; 
+	for(var letter in dict){
+		if(dict[letter] % 2 !== 0){
+			oddCount += 1; 
+		}
 
- 		return revStr; 	
- 	}
-
- 	function _factorial(num){
- 		if(num === 0) {
- 		     return 1
- 		}else {
- 		     return num * _factorial(num - 1);
- 		}
- 	}
+		if(oddCount > 1){
+			return false;
+		}
+	}
+	return true; 
 }
 
 
 module.exports = {
 	isUnique:isUnique,
 	isRotated:isRotated,
-	isPalindrome: isPalindrome
+	isPermutationOfPalindrome: isPermutationOfPalindrome
 };
 
