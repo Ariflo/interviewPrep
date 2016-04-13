@@ -13,7 +13,7 @@ gulp.task('test', function () {
 });
 
 gulp.task('watch-test', function () {
-    gulp.watch(['views/**', 'public/**', 'routes/**', 'test/**'], ['test']);
+    gulp.watch(['views/**', 'public/**','hashTable.js', 'routes/**', 'test/**'], ['test']);
 });
 
 // *** default task *** //
