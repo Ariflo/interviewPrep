@@ -1,0 +1,32 @@
+{
+  "name": "hash_tables",
+  "version": "1.0.0",
+  "description": "practice tests",
+  "main": "hashTable.js",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0",
+    "supertest-session": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Ariflo/interviewPrep.git"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "ariflo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ariflo/interviewPrep/issues"
+  },
+  "homepage": "https://github.com/Ariflo/interviewPrep#readme"
+}

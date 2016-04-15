@@ -5,8 +5,8 @@ var request = require('supertest')
 
 describe('Linked_Lists', function(){
 
-    it("isUnique should return false if a string of letters do not have all unique characters", function(done){
-    	expect(hashTables.isUnique("aaa")).to.equal(false);
+    it("removeDups should return a linkedList with duplicates removed", function(done){
+    	expect(hashTables.removeDups({value: 5, next: {value: 3, next:{value: 4, next:{value: 4, next:{ value: 1, next: null}}}}})).to.equal({value: 5, next: {value: 3, next:{value: 4, next:{ value: 1, next: null}}}});
     	done();
     })       
 
