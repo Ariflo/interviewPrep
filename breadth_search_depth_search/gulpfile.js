@@ -13,7 +13,7 @@ gulp.task('test', function () {
 });
 
 gulp.task('watch-test', function () {
-    gulp.watch(['views/**', 'public/**','binary_search.js', 'routes/**', 'test/**'], ['test']);
+    gulp.watch(['views/**', 'public/**','breadth_v_depth_search.js', 'routes/**', 'test/**'], ['test']);
 });
 
 // *** default task *** //
