@@ -1,0 +1,87 @@
+JSON data
+(multiple levels)
+
+Translate them into flat csv files.
+
+//Input:
+var populationData = 
+[
+    {
+        ethnicity: 'Indian',
+        states:
+        {
+            "CA": 0.00001,
+            "FL": 1.5
+        },
+        
+        // part - 2 
+        nationalities:
+        [         
+            {
+                code: "IN",
+                country: 'India',
+                population: 500
+            },
+            
+            {
+                code: 'US'
+                country: 'USA',
+                population: 100
+            }
+        ]
+    },
+    .....
+]
+
+//PART 1 - Output: 
+csv{
+    columns: [Ethnicity, states, nationalities],
+    rows: [   Indian,
+                { 
+                    CA : 0.00001, 
+                    FL : 1.5 
+                },   
+                {
+                    code: "IN",
+                    country: 'India',
+                    population: 500
+                },
+                {
+                    code: 'US'
+                    country: 'USA',
+                    population: 100
+                }
+           ]
+}
+
+
+
+function convertToCSV(populationData)
+{
+    //TODO: Implement this function
+
+    //first create an empty csv object to later add two keys, columns and rows
+    var csv = {};
+    
+    //iterate over Json Array
+    for(var i = 0; i < populationData.length; i++){
+
+            //return an array of keys ie. [“Ethnicity”, “states”, “nationalities”…]
+            csv.columns = Object.Keys(populationData[i]);       
+    } 
+    
+    
+    
+   //In another loop, iterate over the newly created columns array in order and   
+   //place the value in to a rows array
+    csv.rows = [];
+    for(var j = 0; j < csv.columns.length; j++){
+
+            //push key value of each column to rows array
+            csv.rows.push(populationData[i][csv.columns[j]]);
+    }
+
+    return csv;
+}
+
+
