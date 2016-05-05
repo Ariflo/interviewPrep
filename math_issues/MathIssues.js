@@ -13,19 +13,59 @@
 //0.4 returns 0
 //0.5 returns 1
 Math.round = function(number) {
-  
+	var strNum = number.toString();
+	var deciIndex = strNum.indexOf('.');
+	if(deciIndex !== -1){
+		var tenths = parseInt(strNum[deciIndex + 1]);
+		if(tenths < 5){
+		        var roundNum = strNum.slice(0, -deciIndex);
+		        return parseInt(roundNum);
+		}else{
+		        var roundUp = number + 1;
+		        strNum = roundUp.toString();
+		        var roundNum = strNum.slice(0, -deciIndex);
+		        return parseInt(roundNum);
+		}	
+
+	}else{
+		return number;
+	}
 };
 
 //returns the smallest integer greater than or equal to a given number.
 //0.4 returns 1
 //0.5 returns 1
 Math.ceil = function(number) {
-  return 0; // TODO: fix this
+	var strNum = number.toString();
+	var deciIndex = strNum.indexOf('.');
+	if(deciIndex !== -1){
+		var wholeNum = parseInt(strNum.slice(0, -deciIndex));
+		return wholeNum + 1;
+	}else{
+		return number;
+	}
 };
 
 //returns the largest integer less than or equal to a given number.
 //0.4 returns 0
 //0.5 returns 0
 Math.floor = function(number) {
-  return 0; // TODO: fix this
+ var strNum = number.toString();
+ var deciIndex = strNum.indexOf('.');
+ if(deciIndex !== -1){
+ 	var wholeNum = parseInt(strNum.slice(0, -deciIndex));
+ 	if(wholeNum === 0){
+ 		return 0;
+ 	}else{
+ 		return wholeNum - 1;
+ 	}
+ }else{
+ 	return number;
+ }
 };
+
+console.log(Math.round(855.390));
+console.log(Math.ceil(855.390));
+console.log(Math.ceil(0.390));
+console.log(Math.floor(0.4));
+console.log(Math.floor(0.390));
