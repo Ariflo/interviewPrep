@@ -9,15 +9,23 @@
 // Math.ceil()
 // Math.floor()
 
-
+//returns the value of a number rounded to the nearest integer.
+//0.4 returns 0
+//0.5 returns 1
 Math.round = function(number) {
-  return 0; // TODO: fix this
+  
 };
 
+//returns the smallest integer greater than or equal to a given number.
+//0.4 returns 1
+//0.5 returns 1
 Math.ceil = function(number) {
   return 0; // TODO: fix this
 };
 
+//returns the largest integer less than or equal to a given number.
+//0.4 returns 0
+//0.5 returns 0
 Math.floor = function(number) {
   return 0; // TODO: fix this
 };
